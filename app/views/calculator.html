@@ -1,0 +1,16 @@
+<div ng-controller="CalculatorController as calc">
+	<h3> Attacker Stats </h3>
+	Attacks <input type="text" ng-model="calc.attacks" />
+	To Hit <input type="text" ng-model="calc.toHit" />
+	Strength <input type="text" ng-model="calc.strength" />
+	Armour Pen <input type="text" ng-model="calc.armourPen" />
+	Damage <input type="text" ng-model="calc.damage" />
+	<h3> Defender Stats </h3>
+	Toughness <input type="text" ng-model="calc.toughness" />
+	Armour Save <input type="text" ng-model="calc.armourSave" />
+
+	<h3> Results </h3>
+	Wounds Dealt {{ calc.woundsDealt }}
+	<br/>
+	Damage Dealt {{ calc.damageDealt }}
+</div>

@@ -1,0 +1,16 @@
+Structure
+
+Controller for Offense Inputs
+
+Controller for Defense Inputs
+
+Controller for Graphing Engine for distribution curves
+
+Controller for Full Table Results
+
+Service for calls to Roll Engine
+
+Roll Engine as a web service (PHP?)
+
+Cache Results?
+
