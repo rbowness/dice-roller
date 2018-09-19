@@ -19,6 +19,18 @@
 		controller.armourSave = 3;
 
 		function init() {
+			calculateResults();
+		}
+
+		init();
+
+		//Results
+		controller.woundsDealt = 0;
+		//controller.damageDealt = 0;
+
+		controller.calculateResults = calculateResults;
+
+		function calculateResults() {
 			controller.damageDealt = calculatorFactory.doRollAverageDamageCalculation(
 				controller.attacks,
 				controller.toHit,
@@ -29,13 +41,6 @@
 				controller.damage
 			);
 		}
-
-		//Results
-		init();
-
-		//Results
-		controller.woundsDealt = 0;
-		//controller.damageDealt = 0;
 	}
 
 }());

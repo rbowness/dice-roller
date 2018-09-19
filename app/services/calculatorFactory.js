@@ -33,7 +33,18 @@
 
             var wounds = hits * ((7 - toWound) / 6)
 
-            var unsavedWounds = wounds * ((7 - (armourSave - armourPen)) / 6);
+            //TODO: Fix the math here.
+            var modifiedSave = armourSave + armourPen;
+            if(modifiedSave <= 1)
+            {
+                modifiedSave = 2;
+            }
+            else if(modifiedSave >= 7)
+            {
+                modifiedSave = 0;
+            }
+
+            var unsavedWounds = wounds * (1 - ((7 - modifiedSave) / 6));
 
             var damageAverage = unsavedWounds * damage;
 

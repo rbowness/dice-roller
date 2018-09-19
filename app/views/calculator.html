@@ -1,16 +1,62 @@
 <div ng-controller="CalculatorController as calc">
-	<h3> Attacker Stats </h3>
-	Attacks <input type="text" ng-model="calc.attacks" />
-	To Hit <input type="text" ng-model="calc.toHit" />
-	Strength <input type="text" ng-model="calc.strength" />
-	Armour Pen <input type="text" ng-model="calc.armourPen" />
-	Damage <input type="text" ng-model="calc.damage" />
-	<h3> Defender Stats </h3>
-	Toughness <input type="text" ng-model="calc.toughness" />
-	Armour Save <input type="text" ng-model="calc.armourSave" />
-
-	<h3> Results </h3>
-	Average Wounds Dealt {{ calc.woundsDealt }}
-	<br/>
-	Average Damage Dealt {{ calc.damageDealt }}
+	<div class="calculatorInputsContainer">
+		<div class="calculatorInputs calculatorAttacker">
+			<h4> Attacker Stats </h4>
+			<table>
+				<tr>
+					<td>Attacks</td>
+					<td><input type="text" ng-model="calc.attacks" /></td>
+				</tr>
+				<tr>
+					<td>To Hit</td>
+					<td><input type="text" ng-model="calc.toHit" /></td>
+				</tr>
+				<tr>
+					<td>Strength</td>
+					<td><input type="text" ng-model="calc.strength" /></td>
+				</tr>
+				<tr>
+					<td>Armour Pen</td>
+					<td><input type="text" ng-model="calc.armourPen" /></td>
+				</tr>
+				<tr>
+					<td>Damage</td>
+					<td><input type="text" ng-model="calc.damage" /></td>
+				</tr>
+			</table>
+		</div>
+		<div class="calculatorInputs calculatorDefender">
+			<h4> Defender Stats </h4>
+			<table>
+				<tr>
+					<td>Toughness</td>
+					<td><input type="text" ng-model="calc.toughness" /></td>
+				</tr>
+				<tr>
+					<td>Armour Save</td>
+					<td><input type="text" ng-model="calc.armourSave" /></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div class="calculatorActions">
+			<button ng-click="calc.calculateResults()">Calculate</button>
+		</div>
+	<div class="calculatorResults">
+		<table>
+			<tr>
+				<th colspan=2>Results</th>
+			</tr>
+			<!--
+			<tr>
+				<td>Average Wounds Dealt</td>
+				<td>{{ calc.woundsDealt }}</td>
+			</tr>
+			-->
+			<tr>
+				<td>Average Damage Dealt</td>
+				<td>{{ calc.damageDealt }}</td>
+			</tr>
+		</table>
+	</div>
 </div>

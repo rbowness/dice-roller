@@ -1,0 +1,23 @@
+.calculatorInputsContainer {
+    display:flex;
+    justify-content: center;
+}
+
+.calculatorInputs {
+    margin: 0 25px 0 25px;
+}
+
+.calculatorActions {
+    display:flex;
+    justify-content: center;
+    margin: 25px 0 25px 0;
+}
+
+.calculatorResults {
+    display: flex;
+    justify-content: center;
+}
+
+.calculatorResults th {
+    text-align: center;
+}
