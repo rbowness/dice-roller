@@ -17,27 +17,30 @@
             armourPen,
             damage
         ) {
+            //Calc Hits from Attacks
             var hits = attacks * ((7 - toHit) / 6);
 
             //Figure out the toWound value
-            switch (true) {
-                case strength >= (toughness * 2):
-                    var toWound = 2;
-                    break;
-                case strength > toughness:
-                    var toWound = 3;
-                    break;
-                case strength == toughness:
+            switch (true) 
+            {
+                case strength == toughness: //Most Common, Strength and Toughness equal
                     var toWound = 4;
                     break;
-                case strength < toughness:
+                case strength >= (toughness * 2) : //Strength is Double or Greater than Toughness
+                    var toWound = 2;
+                    break;
+                case strength <= toughness / 2  : //Strength is Half or Less than Half Toughness
+                    var toWound = 6;
+                    break;   
+                case strength > toughness : //Strength is greater than Toughness 
+                    var toWound = 3;
+                    break;
+                case strength < toughness : //Strength is less than Toughness
                     var toWound = 5;
                     break;
-                case strength <= toughness / 2  :
-                    var toWound = 6;
-                    break;    
             }
 
+            //Calc Wounds from Hits
             var wounds = hits * ((7 - toWound) / 6)
 
             //Calculate the actual save
@@ -61,6 +64,7 @@
                 var unsavedWounds = wounds * (1 - ((7 - modifiedSave) / 6));
             }
 
+            //Calc Damage from Unsaved Wounds
             var damageAverage = unsavedWounds * damage;
 
             return damageAverage;
