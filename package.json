@@ -1,0 +1,23 @@
+{
+  "name": "frosty-dice-roller",
+  "description": "A dice roll simulator engine",
+  "version": "0.1.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.13.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rbowness/dice-roller.git"
+  },
+  "author": "rbowness",
+  "license": "UNLICENSED",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/rbowness/dice-roller/issues"
+  },
+  "homepage": "https://github.com/rbowness/dice-roller#readme"
+}
